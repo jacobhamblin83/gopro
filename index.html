@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="reset.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  </head>
+  <body ng-controller='homeCtrl'>
+  <header>
+    <div class='navbar'>
+        <div class='leftbuttons'>
+          <a class='gopro' ui-sref='home'>GoPro</a>
+          <a class='shop' ui-sref='shop'>SHOP</a>
+          <a ui-sref='apps'>APPS</a>
+          <a ui-sref='watch'>WATCH</a>
+          <a ui-sref='plus'>PLUS</a>
+          <i class="fa fa-search" aria-hidden="true" onClick=""></i>
+        </div>
+      <div class='rightbuttons'>
+        <a class='shipping'>Free 2-Day Shipping + Free Returns</a>
+        <div class='lowerrightbuttons'>
+          <a href="#">Login/Register</a>
+          <a href='#'>Support</a>
+          <a href='#'>US</a>
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <ui-view></ui-view>
+  <footer class='footing'>
+    <div></div>
+    <div></div>
+    <div class='links'>
+      <a>About Us</a>
+      <a>News</a>
+      <a>Careers</a>
+      <a>Get Stickers</a>
+      <a>International Developers</a>
+      <a>Affiliate Program</a>
+      <a>Terms</a>
+      <a>Privacy Policy</a>
+      <a>Shop Local</a>
+      <a>Contact Us</a>
+      <a>Refurbished Cameras</a>
+      <a>Order Status</a>
+      <a>Investor Relations</a>
+      <a>Supply Chain</a>
+      <a>Developer Program</a>
+      <a>Cause</a>
+      <a>Feedback</a>
+    </div>    
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js'></script>
+  <script src="app.js"></script>
+  <script src="/controllers/homeCtrl.js"></script>
+  <script src="/controllers/shopCtrl.js"></script>
+  <script src="/controllers/appsCtrl.js"></script>
+  <script src="/controllers/watchCtrl.js"></script>
+  <script src="/controllers/plusCtrl.js"></script>
+  <!--<script src="service.js"></script>-->
+  </body>
+</html>
