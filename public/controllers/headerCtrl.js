@@ -8,71 +8,16 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
 
   function getCart(){
     service.getCart().then(function (response) {
-      service.cart = response.data;
       $rootScope.rootCart = response.data;
-      console.log("got the updated cart from localStorage", service.cart)
+      if ($rootScope.rootCart && $rootScope.rootCart.length > 0){ 
+        //then we want to calculate the total. 
+  
+         $rootScope.subtotal = 10;
+      }
+      console.log("got the updated cart from localStorage")
     })
   }
   
-
-  
-  // $rootScope.$watch('testing', function(newValue, oldValue) {
-  //  $rootScope.testing = 0
-  //  getCart()
-  // });
-
-// var getCart = function(){
-// service.getCart().then(function(res) {
-//   // console.log(res)
-//     $scope.cart = res.data[res.data.length-1];
-//     // console.log($scope.cart)
-//   })
-// }
-
-
-// var getProducts = function(){
-// service.getProducts().then(function(res) {
-//   // console.log(res)
-//   $scope.products = res
-// })
-// }
-
-// getProducts()
-
-//   $rootScope.$watch('testing', function(newValue, oldValue) {
-//   $rootScope.testing = 0
-//   getProducts()
-// });
-
-// var getProducts = function(){
-//   service.seeProducts().then(function(response){
-//       $scope.products = response;
-  //     var subtot = 0;
-  //     for (i=0;i<response.length;i++){
-  //       subtot += +(response[i].price);
-  //     }
-  //     $scope.subtotal = Math.floor(subtot*100)/100
-  // })
-// }
-
-// getProducts()
-
-// $scope.remove = function(id){
-//     service.removeItem(id).then(function(){
-//         $scope.getProducts()
-//     })
-//   }
-
-//   $scope.edit = function(id){
-//     ($scope.selected === id ? $scope.selected = -1 : $scope.selected = id)
-   
-//   }
-//   $scope.update = function(newObj){
-//     service.updateName(newObj).then(function(){
-//         $scope.seeNames()
-//         $scope.selected = -1
-//       })
-//   }
 
   $(document).ready(function () { 
 //shop drop down animations
@@ -171,4 +116,5 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
     
     
   })
-}])
+
+}])//end of module
