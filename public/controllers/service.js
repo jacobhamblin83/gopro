@@ -10,8 +10,13 @@ angular.module('app').service('service', function($http){
       return response.data;
     })
   }
-  this.updateCart = function(cart){
+
+  this.updateCart = (cart) => {
     return $http.post('/api/updatecart', cart)
+  }
+
+  this.deleteCart = () => {
+    return $http.delete('/api/deletecart')
   }
 
 

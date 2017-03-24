@@ -9,17 +9,28 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
   function getCart(){
     service.getCart().then(function (response) {
       $rootScope.rootCart = response.data;
+      $rootScope.subtotal = 0;
+      $rootScope.totalQuantity = 0;
       if ($rootScope.rootCart && $rootScope.rootCart.length > 0){ 
         //then we want to calculate the total. 
-  
-         $rootScope.subtotal = 10;
+        for (i = 0; i < $rootScope.rootCart.length; i++){
+          $rootScope.subtotal += $rootScope.rootCart[i].total
+          $rootScope.subtotal = Math.floor($rootScope.subtotal*100)/100
+          console.log($rootScope.rootCart[i].total)
+          $rootScope.totalQuantity += $rootScope.rootCart[i].quantity;
+        }
+        console.log($rootScope.subtotal)
       }
       console.log("got the updated cart from localStorage")
+      if ($rootScope.totalQuantity > 0){
+        $('.smallcircle').css('display', 'block');
+      }
     })
   }
   
 
   $(document).ready(function () { 
+
 //shop drop down animations
     $('.shop').mouseenter(function () {
       $('.shopdropdown').animate({top: '75px'}, 75);

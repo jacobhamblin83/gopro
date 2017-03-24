@@ -1,2 +1,30 @@
+<!--<div class='vidvid'>
+  <video class="home-page-video-image vsc-initialized" loop="" preload="auto" poster="https://assets-aem.gopro.com/content/dam/homepage/cybermonday/hero5_background.png" autoplay="" data-vscid="ref2unh6d">
+  <source data-src="https://assets-aem.gopro.com/content/dam/homepage/ys/GoProCom_Loop.mp4" src="https://assets-aem.gopro.com/content/dam/homepage/ys/GoProCom_Loop.mp4" type="video/mp4">-->
 
-
+<div class='checkoutpagemain'ng-controller='shopCtrl'>
+  <div class='topmover'></div>        
+  </div>
+  <header class='checkoutheader'>
+    <div class='fixedcheckouttop'>Shopping Cart</div>
+    <div class='checkoutcolumns'>
+      <p>PRODUCT</p>
+      <p>QUANTITY</p>
+      <p>PRICE</p>
+      <p>TOTAL PRICE</p>
+    </div>
+  </header><hr>
+  <div class='itemind'ng-repeat='product in rootCart'>
+    <div class='checkoutitempic'><img src="{{product.image_url}}" alt=""></div>
+    <div class='checkoutdescription'>
+      <div><button class='minibutton'>NEW</button></div>
+      <a href="">{{product.name}}</a>
+      <p>Availability: In Stock</p>
+    </div>
+    <div>
+      <input type="number" class='quantityabc'>REMOVE
+    </div>
+    <div>{{product.price}}</div>
+    <div>{{product.total}}</div>
+  </div>
+</div>

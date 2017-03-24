@@ -1,0 +1,17 @@
+<div class='cartsummarytopper'></div>
+<div class ='mainsectioncartsummary' ng-controller='shopCtrl' ng-repeat='product in rootCart'>
+  <div class='cart_dropdown_product_image2'>
+    <img src='{{product.image_url}}'alt="">
+  </div>
+  <!--<div class='cart_dropdown_quantity'>{{product.quantity}}</div>-->
+  <input class='changequantity'type='number' ng-model='product.quantity'>
+  <div><button ng-click='removeCart()'>Update Quantity</button></div>
+  <div class='cart_dropdown_name_and_price2 anotherthing'>
+    <div class='cart_dropdown_product_name'><a ui-sref='shop'>{{product.name}}</a></div>
+    <div class='cart_dropdown_price_times_quantity'>${{product.total}}</div>
+  </div>
+  <div><button ng-click='removeCart()'>Remove Item(s)</button></div>
+  <div class='cart_dropdown_price_times_quantity'>{{runningtotal}}</div>
+
+
+</div>

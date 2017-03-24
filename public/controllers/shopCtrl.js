@@ -1,5 +1,5 @@
-angular.module('app').controller('shopCtrl', function ($scope, service, $rootScope) {
-  let cart = [];
+angular.module('app').controller('shopCtrl', function($scope, service, $rootScope) {
+  let cart = $rootScope.rootCart ? $rootScope.rootCart : [];
   let products;
 
   init();
@@ -8,19 +8,24 @@ angular.module('app').controller('shopCtrl', function ($scope, service, $rootSco
     getProducts();
   }
 
-
   function getCart(){
     service.getCart().then(function (response) {
       $rootScope.rootCart = response.data;
-      
+      $rootScope.subtotal = 0;
+      $rootScope.totalQuantity = 0;
       if ($rootScope.rootCart && $rootScope.rootCart.length > 0){ 
-        //here you will want to calculate the total. 
-
-
-        $rootScope.subtotal = 10;
+        for (i = 0; i < $rootScope.rootCart.length; i++){
+          $rootScope.subtotal += $rootScope.rootCart[i].total
+          $rootScope.subtotal = Math.floor($rootScope.subtotal*100)/100
+          $rootScope.totalQuantity += $rootScope.rootCart[i].quantity;
+        }
       }
       cart = $rootScope.rootCart;
-      console.log("got the updated cart from localStorage", cart)
+      if ($rootScope.totalQuantity > 0) {
+        $('.smallcircle').css('display', 'block')
+        $('.shopping_cart_dropdown_subtotal').css('display', 'block');
+        $('.noitems').css('display', 'none');
+      } 
     })
   }
 
@@ -30,6 +35,13 @@ angular.module('app').controller('shopCtrl', function ($scope, service, $rootSco
     })
   }
 
+  $scope.removeCart = function(){
+    service.deleteCart().then(function() {
+      return getCart();
+    }).then(response => {
+      $rootScope.rootCart = response
+    })
+  }
 
   $scope.addToCart = function (id) {
     var product = products[id - 1];
@@ -45,7 +57,7 @@ angular.module('app').controller('shopCtrl', function ($scope, service, $rootSco
         for (var i = 0; i < cart.length; i++) {
           if (cart[i].id === id) {
             cart[i].quantity += 1;
-            product.total = product.price * product.quantity;
+            cart[i].total = Math.floor(cart[i].price * cart[i].quantity * 100)/100;
             service.updateCart(cart).then(function(res){
               return getCart();
             })
@@ -59,7 +71,5 @@ angular.module('app').controller('shopCtrl', function ($scope, service, $rootSco
         return getCart();
       })
     }
-
   }
-
 })//end of module

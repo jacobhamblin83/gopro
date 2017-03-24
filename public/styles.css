@@ -1,8 +1,15 @@
 body {
   font-family: 'Roboto', sans-serif;
+  margin:0px;
+}
+.navwrapper {
+  display: flex;
+  justify-content: space-around  
+  
 }
 .navbar {
   width: 100vw;
+  max-width: 1200px;
   height: 75px;
   background: black;
   position: fixed;
@@ -249,7 +256,8 @@ a {
   position:fixed;
   background: white;
   height: 50px;
-  width:100%;
+  width:100vw;
+  max-width: 1200px;
   z-index: 6;
   display: flex;
   justify-content: flex-end;
@@ -279,12 +287,11 @@ a {
   height: 50px;
   display:flex;
   flex-direction: column;
-  right: 20px;
+  right: 80px;
   font-size: 13px;
 }
 .hi {
-  /*height: fit-content;*/
-  height: 500px;
+  height: fit-content;
   width:300px;
   z-index: 7;
   position:fixed;
@@ -297,6 +304,7 @@ a {
 }
 .innerhi {
   /*height: fit-content;*/
+  max-height: 350px;
   width:280px;
   padding:10px;
   background:#FFFFFF;
@@ -306,9 +314,22 @@ a {
 }
 #hey {
   height:30px;
-  width: 30px;
+  width: 60px;
   display:flex;
   margin-right:30px
+}
+.smallcircle {
+  display:none;
+  margin-left: 5px;
+  margin-top: -5px;
+  height:18px;
+  width:18px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
 }
 .shopping_cart_drop_down_header {
   margin-bottom:10px;
@@ -351,6 +372,12 @@ a {
 }
 .cart_dropdown_price_times_quantity {
 
+}
+.noitems {
+  display:block;
+}
+.shopping_cart_dropdown_subtotal {
+  display:none;
 }
 .shipping {
   color:deepskyblue;
@@ -438,11 +465,10 @@ a {
   height: 100%;
 }
 .shopimage {
-  margin-top:20px;
   height: 45vw;
   width: 100vw;
-  position: absolute;
-  background: url(./images/image3.jpg) no-repeat center center;
+  position: relative;
+  background: url(./images/CLP_Hero.jpg) no-repeat center center;
   background-size: cover;
 }
 .shoptitle {
@@ -661,11 +687,12 @@ button {
   margin-bottom: 75px;
 }
 .lowersectionofshop {
-  height: 1500px;
+  height: 1600px;
   background: #f7f7f7;
   display:flex;
   flex-direction: column;
   align-items:center;
+  padding-top: 100px;
 }
 .firstcontainershop {
   width:80vw;
@@ -673,7 +700,7 @@ button {
   background:white;
 }
 .toppictureshop {
-  background-image: url(./images/image9.jpg);
+  background-image: url(./images/hero5blackpic.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   width: 80vw;
@@ -693,11 +720,11 @@ button {
 }
 .shophero5camera {
   position:absolute;
-  background-image: url(./images/image11.png);
+  background-image: url(./images/HERO5_Black.png);
   height: 20vw;
-  width: 400px;
+  width: 30vw;
   background-size: contain;
-  top:150px;
+  top:11vw;
   background-repeat: no-repeat;
 }
 .underpicture {
@@ -763,12 +790,23 @@ button {
 }
 .hero5sessionpic {
   position:absolute;
-  background-image: url(./images/image14.png);
+  background-image: url(./images/hero5sessionpic.png);
   height: 20vw;
-  width: 350px;
+  width: 20vw;
+  background-size: contain;
+  top:10vw;
+  background-repeat: no-repeat;
+}
+.layoverpic {
+  position:absolute;
+  background-image: url(./images/camarasheros.png);
+  height: 300px;
+  width: 50vw;
   background-size: contain;
   top:100px;
   background-repeat: no-repeat;
+  top:35vw;
+  left: 25vw;
 }
 .underpic {
   position:absolute;
@@ -812,11 +850,11 @@ button {
 }
 .herosessionpic {
   position:absolute;
-  background-image: url(./images/image17.png);
+  background-image: url(./images/herosessionpic.png);
   height: 20vw;
-  width: 400px;
+  width: 20vw;
   background-size: contain;
-  top:85px;
+  top:10vw;
   background-repeat: no-repeat;
 }
 .underpic2 {
@@ -971,4 +1009,292 @@ threecolumns p{
 .checkoutmain {
   height:500px;
   width: 100vw;
+}
+.appstop {
+  width: 100vw;
+  height: 650px;
+  background: linear-gradient(#1a1a1a, #1a1a1a, #1a1a1a, #5d5d5d);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top:50px;
+}
+.row {
+  width: 50px;
+  height:50px;
+  z-index: 1000;
+}
+.appstitle {
+  margin-top: 75px;
+  text-align: center;
+  font-size:40px;
+  font-weight: 700;
+  color:white;
+  height: 100px;
+  width: 400px;
+}
+.appsparag {
+  text-align: center;
+  font-weight: 100;
+  line-height: 20px;
+  height: 50px;
+  color:white;
+  width: 400px;
+  margin-top:-10px;
+}
+.appstopimage {
+  background-image:url(./images/image21.png);
+  width:100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.animated {
+	    -webkit-animation-duration: 1s;
+	    animation-duration: 1s;
+	    -webkit-animation-fill-mode: both;
+	    animation-fill-mode: both;
+	}
+	@-webkit-keyframes bounce {
+	    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(30px);}
+	    40% {-webkit-transform: translateY(0px);}
+	    60% {-webkit-transform: translateY(15px);}
+	} 
+	@keyframes bounce {
+	    0%, 20%, 50%, 80%, 100% {transform: translateY(30px);}
+	    40% {transform: translateY(0px);}
+	    60% {transform: translateY(15px);}
+	}
+.bounce {
+	    -webkit-animation-name: bounce;
+	    animation-name: bounce;
+	    -webkit-animation-iteration-count:infinite;
+	    animation-iteration-count:infinite;
+	}
+.appssecondsection {
+    height:800px;
+    width:100vw;
+    background:white;
+    display:flex;
+  }
+.firstappsleft {
+    height:800px;
+    width: 50vw;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+.picturecontainerapps {
+    height:500px;
+    width:50vw;
+    background-position: center;
+    background-image:url(./images/image22.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+.pictureapps1 {
+    
+  }
+.firstappsright {
+    height:800px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    padding: 150px 120px 120px 120px;
+  }
+.appssectionicon {
+  height:70px;
+  width:70px;
+  background-position: center;
+  background-image:url(./images/capture-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 20px;
+}
+.appssectiontitle {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.appssectionparag {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.anotherappssecondparag {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 20px;
+}
+.appfeatures {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 20px;
+  padding-right: 100px;
+}
+.someplusclass {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sosickofnaingclasses {
+  font-size: 13px;
+  font-weight: 100;
+  line-height: 20px;
+}
+.plusiconinapps {
+  background-image: url(https://shop.gopro.com/on/demandware.static/-/Library-Sites-sharedGoProLibrary/default/dwae367a28/images/software-and-app/plus-icon.png);
+  height: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:80px;
+}
+.linkythings {
+  display: flex;
+  justify-content: flex-start;
+  width: 250px;
+  height: 50px;
+}
+.buttonimage {
+  background-image: url(https://shop.gopro.com/on/demandware.static/-/Library-Sites-sharedGoProLibrary/default/dw630f308f/images/software-and-app/apple-download.png);
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:150px;
+}
+.buttonimage2 {
+  background-image: url(https://shop.gopro.com/on/demandware.static/-/Library-Sites-sharedGoProLibrary/default/dwda5b3a31/images/software-and-app/android-download.png);
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width:150px;
+}
+.disclaimer {
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 20px;
+  margin-top: 30px;
+}
+ul {
+  list-style-image: url(https://shop.gopro.com/on/demandware.static/-/Library-Sites-sharedGoProLibrary/default/dw489f853d/images/software-and-app/bullet.png);
+}
+.secondabc {
+  background-image:url(./images/image23.png);
+}
+.seconddef {
+  background: #efefef
+}
+.thirdabc {
+  background-image:url(./images/image24.png);
+  margin-right: -40px;
+}
+.aabbcc {
+  padding: 150px 0px 120px 180px;
+}
+.loginbody {
+  height: 500px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: blue
+}
+.loginbody input {
+  height: 50px;
+  width:300px;
+  font-size: 20px;
+}
+.loginbody button {
+  height: 50px;
+  width: 300px;
+}
+.cartsummarytopper {
+  width: 100vw;
+  height:100px;
+}
+.mainsectioncartsummary {
+  height: 200px;
+  width: 100vw;
+  display:flex;
+  padding:100px;
+}
+cart_dropdown_product_image2 {
+  height:200px;
+  width:200px;
+  margin-left: 200px;
+}
+.changequantity {
+  height: 30px;
+  width: 60px;
+  font-size: 30px;
+}
+.cart_dropdown_name_and_price2 {
+  display:flex;
+  flex-direction: column;
+  height:100px;
+  width:200px;
+  font-size: 30px;
+  margin-left: 30px;
+}
+.anotherthing {
+  width: 400px
+}
+.vidvid {
+  z-index: 1000;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.topmover {
+  height: 110px;
+  width: 100vw
+}
+.fixedcheckouttop{
+  padding: 10px 10px 10px 30px;
+  font-size: 22px;
+  position: fixed;
+  top:75px;
+  background: white
+}
+.checkoutcolumns {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px
+}
+.itemind {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px;
+}
+.checkoutdescription {
+  display: flex;
+  flex-direction: column;
+  margin-left: -265px;
+}
+.minibutton {
+  border-radius: 4px;
+  height: 18px;
+  width: 40px;
+  margin-bottom: 10px;
+}
+.quantityabc {
+  height: 25px;
+  width: 50px;
+  margin-left: -200px;
+}
+.checkoutpagemain {
+  font-size: 30px;
 }

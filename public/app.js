@@ -25,4 +25,16 @@ angular.module('app',['ui.router'])
             url: '/checkout/',
             templateUrl: '/views/checkout.html'
         })
+        .state('apps', {
+            url: '/apps/',
+            templateUrl: '/views/apps.html'
+        })
+        .state('cartsummary', {
+            url: '/cartsummary/',
+            templateUrl: '/views/cartsummary.html'
+        })
+        .state('plus', {
+            url: '/plus/',
+            templateUrl: '/views/plus.html'
+        })
 })

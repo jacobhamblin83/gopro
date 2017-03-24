@@ -13,6 +13,7 @@
   <body>
   <header ng-controller='headerCtrl'>
     <animatedir></animatedir>
+    <div class='navwrapper'>
     <div class='navbar'>
         <div class='leftbuttons'>
           <a class='gopro' ui-sref='home'>GoPro
@@ -27,11 +28,11 @@
           <div class='killer'></div>
           <a class='shop' id='shopid' ui-sref='shop'>SHOP</a>
           <div class='killer'></div>
-          <a class='appss' href='#'>APPS</a>
+          <a class='appss' ui-sref='apps'>APPS</a>
           <div class='killer'></div>
           <a class='watchclass' id='watchid' href='#'>WATCH</a>
           <div class='killer'></div>
-          <a class='plus' href='#'>PLUS
+          <a class='plus' ui-sref='plus'>PLUS
             <div class='secretclass'></div>
             <div class='plusboxes'>
               <div class='plusboxone'></div>
@@ -50,7 +51,9 @@
           <a ui-sref='login'>Login/Register</a>
           <a href='#'>Support</a>
           <a href='#'>US</a>
-          <a href='#' id='hey' class="fa fa-shopping-cart"></a>
+          <a href='#' id='hey' class="fa fa-shopping-cart">
+            <div class='smallcircle'>{{totalQuantity}}</div>
+          </a>
         </div>
       </div>
     </div>
@@ -80,7 +83,7 @@
 
         <div class='shopping_cart_drop_down_header'>Your cart<hr>
         </div>
-
+          <p class='noitems'>There are no items in your cart</p>
         <div  ng-repeat="product in rootCart" class='shopping_cart_drop_down_items_section'>
           <ul>
           <div class='cart_dropdown_product_image'>
@@ -91,14 +94,15 @@
             <div class='cart_dropdown_product_name'><a ui-sref='shop'>{{product.name}}</a></div>
             <div class='cart_dropdown_price_times_quantity'>${{product.total}}</div>
           </div>
-          </ul>
+          </ul> 
         </div>
         
         <hr><div class='shopping_cart_dropdown_footer'>
-          <div class='shoppig_cart_dropdown_subtotal'>Subtotal: ${{subtotal}}</div>
-          <button ui-sref='checkout' class='shopping_cart_dropdown_checkout'>Check Out</button>
+          <div class='shopping_cart_dropdown_subtotal'>Subtotal: ${{subtotal}}</div>
+          <button ui-sref='cartsummary' class='shopping_cart_dropdown_checkout'>Check Out</button>
         </div>
       </div>
+    </div>
     </div>
   </header>
 
@@ -175,7 +179,7 @@
   <script src="/controllers/headerCtrl.js"></script>
   <script src="/controllers/shopCtrl.js"></script>
   <script src="/controllers/service.js"></script>
-  <script src='/controllers/shoppingcartcontroller.js'></script>
+  <script src='/controllers/logincontrol.js'></script>
 
   </body>
 </html>
