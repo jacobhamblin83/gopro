@@ -1,0 +1,155 @@
+.plusbody {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1000px;
+}
+.plushead {
+  width: 100vw;
+  max-width: 1200px;
+  height: 30px;
+  font-size: 28px;
+  display:flex;
+  position:fixed;
+  top:90px;
+  left:150px;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom:15px;
+}
+.plushead p{
+  width:350px;
+  height: 35px;
+  background: white;
+  padding: 2px;
+}
+.littlediff {
+  width:200px;
+  margin-right: 10px;
+  height: 30px;
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  color: black;
+}
+.myrightbuttons {
+  width:300px;
+  height: 30px;
+  display: flex;
+  position:fixed;
+  top:90px;
+  right:150px;
+  align-items: center;
+}
+.mygreenbutton {
+  background: lightgreen;
+}
+.pluscolumns {
+  width: 100vw;
+  max-width: 1200px;
+  font-size: 20px;
+  display:flex;
+  margin-top:30px;
+  margin-left: 2vw;
+}
+.headd {
+  height:30px;
+}
+.firstcolumnplus {
+  width:42vw;
+  display: flex;
+  padding:5px;
+}
+.secondcolumnplus {
+  width:22vw;
+}
+.thirdcolumnplus {
+  width:17vw;
+}
+.fourthcolumnplus {
+  width:17vw;
+}
+.mainnn {
+  height: 190px;
+}
+.aline {
+  width:100vw;
+  max-width:1200px;
+  height: 1px !important;
+  background:black;
+  margin-top:10px;
+}
+.pluspicimage{
+  border-style: solid;
+  border-width: .5px;
+  border-color: black;
+  height: 180px;
+  width: 180px;  
+  background-position: center;
+}
+.pluspicdesc {
+  height:180px;
+  width: 290px;
+  margin-left:20px;
+
+}
+.smallcontainer {
+  display:flex;
+  flex-direction: column;
+}
+.smallinput {
+  width: 50px;
+  height: 35px;
+  border-radius: 20%;
+  font-size: 20px;
+  margin-bottom:16px;
+}
+.endcheckout {
+  display:flex;
+  width:100vw;
+  max-width: 1200px;
+  height:170px;
+  justify-content: flex-end;
+}
+.endcheckoutsection{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.mocha {
+  height:30px;
+  padding:5px;
+  font-size: 15px;
+}
+.andmocha {
+  color:red;
+}
+.lefter {
+  width:300px;
+}
+.righter {
+  width:100px;
+}
+.diffwidth {
+  width:350px;
+}
+.adiffwidth {
+  width:100px;
+}
+.notmocha {
+  font-size: 20px;
+}
+.pusherdowner {
+  width:100vw;
+  height:140px;
+}
+#itsaline {
+  height: 1px !important;
+  width: 350px;
+  background: black;
+}
+.registerbody {
+  height: 1000px;
+}

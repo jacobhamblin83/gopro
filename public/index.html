@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/reset.css" rel="stylesheet">
     <link href="/styles.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
      <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
 
@@ -61,7 +62,7 @@
       <a ui-sref='shop' class='dropdiv1' id='dropdiv1'></a>
       <a href='#' class='dropdiv2' id='dropdiv1'></a>
       <a href='#' class='dropdiv3' id='dropdiv1'></a>
-      <a href='#' class='dropdiv4' id='dropdiv1'></a>
+      <a href="#" class='dropdiv4' id='dropdiv1'></a>
       <a href='#' class='dropdiv5' id='dropdiv1'></a>
       <a href='#' class='dropdiv6' id='dropdiv1'></a>
       <a href='#' class='dropdiv7' id='dropdiv1'></a>
@@ -87,7 +88,7 @@
         <div  ng-repeat="product in rootCart" class='shopping_cart_drop_down_items_section'>
           <ul>
           <div class='cart_dropdown_product_image'>
-            <img src='{{product.image_url}}'alt="">
+            <img ng-src='{{product.image_url}}'alt="">
           </div>
           <div class='cart_dropdown_quantity'>{{product.quantity}}</div>
           <div class='cart_dropdown_name_and_price'>
@@ -99,7 +100,7 @@
         
         <hr><div class='shopping_cart_dropdown_footer'>
           <div class='shopping_cart_dropdown_subtotal'>Subtotal: ${{subtotal}}</div>
-          <button ui-sref='cartsummary' class='shopping_cart_dropdown_checkout'>Check Out</button>
+          <button ui-sref='plus' class='shopping_cart_dropdown_checkout mygreenbutton donkey'>Check Out</button>
         </div>
       </div>
     </div>
@@ -173,7 +174,6 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js'></script>
-  <script src="http://code.angularjs.org/1.0.0rc10/angular-cookies-1.0.0rc10.js"></script>  
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
   <script src="/app.js"></script>
   <script src="/controllers/headerCtrl.js"></script>

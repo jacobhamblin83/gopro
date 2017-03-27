@@ -16,10 +16,8 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
         for (i = 0; i < $rootScope.rootCart.length; i++){
           $rootScope.subtotal += $rootScope.rootCart[i].total
           $rootScope.subtotal = Math.floor($rootScope.subtotal*100)/100
-          console.log($rootScope.rootCart[i].total)
           $rootScope.totalQuantity += $rootScope.rootCart[i].quantity;
         }
-        console.log($rootScope.subtotal)
       }
       console.log("got the updated cart from localStorage")
       if ($rootScope.totalQuantity > 0){
@@ -27,10 +25,10 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
       }
     })
   }
-  
 
   $(document).ready(function () { 
-
+    
+    
 //shop drop down animations
     $('.shop').mouseenter(function () {
       $('.shopdropdown').animate({top: '75px'}, 75);
@@ -72,6 +70,7 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
     $('.exitsearch').on('click', function() {
       $('.searchdropdown').css('top', '25px');
     })
+    
 
 //hightlighting shop items    
     $('.dropdiv1').mouseenter(function() {
@@ -124,7 +123,6 @@ angular.module('app').controller('headerCtrl', ['$scope', 'service', '$rootScope
     $('.hi').mouseleave(function(){
       $('.hi').fadeOut(300);
     })
-    
     
   })
 

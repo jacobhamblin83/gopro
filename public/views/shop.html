@@ -18,8 +18,8 @@
           <p class='buyahero5'>HERO5 Black is the most powerful and easy to use GoPro ever, thanks to its 4K video, voice control, one-button simplicity, touch display and waterproof design.</p>
           <p class='hero5blackcost'>$399.99</p>
           <div class='shophero5blackbuttonscontainer'>
-            <button ng-click='addToCart(1)'>ADD TO CART</button>
-            <button id='diffbutton'>LEARN MORE</button>
+            <button class='addtocart' ng-click='addToCart(1)'>ADD TO CART</button>
+            <button ng-click='addOrder()'id='diffbutton'>LEARN MORE</button>
           </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
     <div class='lastbuttonshop'>
       <button>LEARN MORE</button>
       <button>LEARN MORE</button>
-      <button>LEARN MORE</button>
+      <button ng-click='addOrder()'>LEARN MORE</button>
     </div>
     
   </div>

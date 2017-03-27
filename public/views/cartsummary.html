@@ -1,7 +1,7 @@
 <div class='cartsummarytopper'></div>
 <div class ='mainsectioncartsummary' ng-controller='shopCtrl' ng-repeat='product in rootCart'>
   <div class='cart_dropdown_product_image2'>
-    <img src='{{product.image_url}}'alt="">
+    <img ng-src='{{product.image_url}}'alt="">
   </div>
   <!--<div class='cart_dropdown_quantity'>{{product.quantity}}</div>-->
   <input class='changequantity'type='number' ng-model='product.quantity'>

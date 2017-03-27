@@ -19,38 +19,66 @@ app.use(session({
   saveUninitialized: true
 }));
 
+//RESET DATA TABLES IN DATABASE
 app.set('db', db);
 db.schema((err, data) => {
   if (err) console.log(err);
   else console.log('All tables successfully reset');
 })
 
+//UPDATE CART ON THE COOKIE
 app.post('/api/updatecart', (req, res) => {
   req.session.cart = req.body; 
   res.status(200).send('updated cart');
 })
 
+//CLEAR CART FROM COOKIE
 app.delete('/api/deletecart', (req, res) => {
   req.session.cart = null;
   res.send('yum')
 })
 
+//ADD ITEM TO CART ON COOKIE
 app.post('/api/cart', (req, res) => {
-  console.log(req.body)
   if (Array.isArray(req.session.cart)) {
-    req.session.cart.push(req.body)
-    console.log(req.session)
   } else {
     req.session.cart = [req.body]
   }
   res.status(200).send('ok');
 });
 
-app.get('/api/cart', (req, res) => {
-  res.status(200).json(req.session.cart);
-  console.log(req.session)
+app.post('/api/ditem/:id', function(req, res){
+  var wrongid = req.params.id.toString().split('')
+  var id = wrongid[1]
+  for (var i = 0; i < req.session.cart.length ; i ++){
+    if (req.session.cart[i].id == id){
+      req.session.cart.splice(i,1)
+    }
+  }
+  res.status(200).send('ok')
+})
+
+//POST ORDER FROM COOKIE INTO DATABASE
+app.post('/api/addcart', function(req, res) {
+  var cart = req.session.cart;
+  for (var i = 0; i < cart.length; i++) {
+    var params = [
+      cart[i].id,
+      cart[i].name,
+      cart[i].quantity,
+      cart[i].price
+    ]; 
+    db.add_cart(params, function(err, response) {
+    })
+  }
 });
 
+//GET CART FROM COOKIE
+app.get('/api/cart', (req, res) => {
+  res.status(200).json(req.session.cart);
+});
+
+//GET PRODUCTS FROM DATABASE
 app.get('/api/products', (req, res) => {
   db.see_products((err, item) => {
     if (!err) {
@@ -60,7 +88,7 @@ app.get('/api/products', (req, res) => {
       res.status(500).json(err)
     }
   })
-})
+});
 
 app.listen(3000, () => {
   console.log('Listening on port 3000')

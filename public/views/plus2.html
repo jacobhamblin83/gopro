@@ -1,13 +1,10 @@
-<!--<div class='vidvid'>
-  <video class="home-page-video-image vsc-initialized" loop="" preload="auto" poster="https://assets-aem.gopro.com/content/dam/homepage/cybermonday/hero5_background.png" autoplay="" data-vscid="ref2unh6d">
-  <source data-src="https://assets-aem.gopro.com/content/dam/homepage/ys/GoProCom_Loop.mp4" src="https://assets-aem.gopro.com/content/dam/homepage/ys/GoProCom_Loop.mp4" type="video/mp4">-->
 <div class='plusbody' ng-controller='shopCtrl'>
     <div ng-controller='shopCtrl'>
       <div class='plushead'>
-        <p>Shopping Cart</p>
+        <p>Jacobs Shopping Cart</p>
         <div class='myrightbuttons'>
           <button ui-sref='shop'class='littlediff'>CONTINUE SHOPPING</button>
-          <button ui-sref='checkout' class='mygreenbutton'>CHECKOUT</button>
+          <button ui-sref='thankspage' ng-click="addOrder()" class='mygreenbutton'>CHECKOUT</button>
         </div>
       </div>
     </div>
@@ -27,7 +24,7 @@
       <div class='secondcolumnplus mainnn'>
         <div class='smallcontainer'>
           <input class='smallinput'type="number" ng-model='product.quantity'>
-          <a href='#'ng-click='removeItem(product.id)'>REMOVE</a>
+          <a ui-sref=''ng-click='removeItem(product.id)'>REMOVE</a>
         </div>
         
       </div>
@@ -52,39 +49,3 @@
     </div>
     </div>
 </div>
-
-
-
-
-
-<!--<div class='page'>
-  <div class='checkoutpagemain'ng-controller='shopCtrl'>
-    <div class='topmover'></div>        
-    </div>
-    <header class='checkoutheader'>
-      <div class='fixedcheckouttop'>Shopping Cart</div>
-      <div class='checkoutcolumns'>
-        <p>PRODUCT</p>
-        <p>QUANTITY</p>
-        <p>PRICE</p>
-        <p>TOTAL PRICE</p>
-      </div>
-    </header><hr>
-    <div class='itemind'ng-repeat='product in rootCart'>
-      <div class='checkoutitempic'><img src="{{product.image_url}}" alt=""></div>
-      <div class='checkoutdescription'>
-        <div><button class='minibutton'>NEW</button></div>
-        <a href="">{{product.name}}</a>
-        <p>Availability: In Stock</p>
-      </div>
-      <div>
-        <input type="number" class='quantityabc'>
-        <button class='removebutton'>REMOVE</button>
-      </div>
-      <div>{{product.price}}</div>
-      <div>{{product.total}}</div>
-    </div>
-  </div>
-</div>-->
-
-

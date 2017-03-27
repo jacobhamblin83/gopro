@@ -37,4 +37,18 @@ angular.module('app',['ui.router'])
             url: '/plus/',
             templateUrl: '/views/plus.html'
         })
+        .state('register', {
+            url: '/register/',
+            templateUrl: '/views/register.html',
+            controller: 'shopCtrl'
+        })
+        .state('plus2', {
+            url: '/plus2/',
+            templateUrl: '/views/plus2.html',
+            controller: 'shopCtrl'
+        })
+        .state('thankspage', {
+            url: '/thankspage/',
+            templateUrl: '/views/thankspage.html'
+        })
 })
