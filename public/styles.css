@@ -18,13 +18,20 @@ body {
   align-items: center;
   padding-left: 20px;
   z-index: 10;
+  justify-content: space-between;
 }
 a {
   color: #CCCCCC;
   text-decoration: none;
 }
+.home-page-video-image {
+  width: 100vw;
+  min-height: 300px;
+
+}
 .leftbuttons {
   width: 45vw;
+  /*min-width: 400px;*/
   display:flex;
   align-items: center;
 }
@@ -282,12 +289,12 @@ a {
 }
 
 .rightbuttons {
-  position: fixed;
-  width: 25vw;
+  /*position: fixed;*/
+  width: 300px;
   height: 50px;
   display:flex;
   flex-direction: column;
-  right: 80px;
+  right: 0px;
   font-size: 13px;
 }
 .hi {
@@ -314,9 +321,9 @@ a {
 }
 #hey {
   height:30px;
-  width: 60px;
+  width: 40px;
   display:flex;
-  margin-right:30px
+  /*margin-right:30px*/
 }
 .smallcircle {
   display:none;
@@ -405,9 +412,12 @@ a {
   position:relative;
 }
 .image {
-  height: 415px;
+  height: 21vw;
+  /*min-height: 200px;*/
   width: 100vw;
-  background-size: cover;
+  /*background-size: cover;*/
+  background-position: center;
+  margin-bottom: 11vw;
 }
 .homepage-video-image-container>video {
     min-height: 30vw;
@@ -429,7 +439,7 @@ a {
     width: 100vw;
     height: 15vw;
     position:absolute;
-    top: 25vw;
+    top: 19vw;
 }
 .newtitlehome {
   position:absolute;
@@ -469,19 +479,19 @@ a {
   justify-content: space-around;
   margin:40px;
   font-size: 40px;
-  padding-top:190px;
+  /*padding-top:190px;*/
   color: #333333;
 }
 .parag {
   width: 534px;
-  height: 50px;
+  /*height: 50px;*/
   display:flex;
   font-size: 20px;
   text-align: center;
   line-height: 30px;
   justify-content: space-around;
   margin-top:20px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   color: #333333;
   font-weight: 400;
 }
@@ -539,7 +549,8 @@ a {
   padding-left:30%;
 }
 #dronetitle {
-  margin-top:300px;
+  margin-top:400px;
+  /*padding-top: 11vw;*/
 }
 #droneparag {
   width:33vw;
@@ -607,7 +618,8 @@ a {
   position: relative;
 }
 .plussection {
-  height: 80vh;
+  height: 30vw;
+  min-height: 450px;
   width: 85vw;
   background: white;
   display:flex;
@@ -768,9 +780,10 @@ button {
   background-repeat: no-repeat;
 }
 .underpicture {
-  height:300px;
+  /*height:10vw;*/
   width: 400px;
   margin-top: 100px;
+  margin-bottom: 21vw
 }
 .Simplythebest {
   font-size: 35px;
@@ -852,7 +865,7 @@ button {
 }
 .underpic {
   position:absolute;
-  top:360px;
+  top:25vw;
   width:100%;
   display:flex;
   flex-direction: column;
@@ -863,10 +876,11 @@ button {
   margin-bottom:20px;
 }
 .buyahero5session {
-  margin-bottom:20px;
-  margin-left:95px;
-  margin-right:95px;
+  /*margin-bottom:20px;*/
+  margin: 20px auto;
   line-height: 30px;
+  padding-right: 49px;
+  padding-left: 49px;
 }
 .hero5sessioncost {
   margin-bottom: 20px;
@@ -901,7 +915,7 @@ button {
 }
 .underpic2 {
   position:absolute;
-  top:360px;
+  top:25vw;
   width:100%;
   display:flex;
   flex-direction: column;
@@ -912,10 +926,10 @@ button {
   margin-bottom:20px;
 }
 .buyahero5session2 {
-  margin-bottom:20px;
-  margin-left:95px;
-  margin-right:95px;
+  margin: 20px auto;
   line-height: 30px;
+  padding-right: 49px;
+  padding-left: 49px;
 }
 .hero5sessioncost2 {
   margin-bottom: 20px;
@@ -1023,25 +1037,28 @@ threecolumns p{
 }
 .leftcolumn {
   width:27vw;
-  height:200px;
+  /*height:200px;*/
   color: #CCCCCC;
   margin-left: 25px;
   font-weight: 400;
   line-height: 25px;
-  font-size: 14px
+  font-size: 14px;
+  min-width: 200px;
 }
 .centercolumn {
   width:27vw;
-  height:200px;
+  /*height:200px;*/
   color: #CCCCCC;
   margin-left: 25px;
   font-weight: 400;
   line-height: 25px;
-  font-size: 14px
+  font-size: 14px;
+  min-width: 200px;
 }
 .rightcolumn {
   width:27vw;
-  height:200px;
+  min-width: 200px;
+  /*height:200px;*/
   color: #CCCCCC;
   margin-left: 25px;
   font-weight: 400;
@@ -1370,4 +1387,52 @@ cart_dropdown_product_image2 {
   width: 50px;
   margin-left: 50px;
 }
-
+@media(max-width: 800px){
+  .plus {
+    display:none;
+  }
+  .links {
+    display: none;
+  }
+  .socialmedialinks {
+    display: none;
+  }
+  .footing {
+    height: 900px;
+  }
+}
+@media(max-width: 900px) {
+  #fasearch {
+    display: none;
+  }
+}
+.moretitle {
+  padding-top: 100px;
+}
+@media(max-width:800px){
+  .threecolumns {
+    flex-direction: column;
+  }
+  .leftcolumn .centercolumn .rightcolumn{
+    margin-bottom: 40px;
+  }
+}
+@media(max-width: 700px){
+  #watchid {
+    display: none;
+  }
+}
+@media(max-width: 550px){
+  .gopro {
+    display: none;
+  }
+  #shopid {
+    display: none;
+  }
+  .appss{
+    display: none;
+  } 
+  .rightbuttons {
+    display: none;
+  }
+}
