@@ -1,3 +1,3 @@
-select id from users 
-where username = $1
+select firstname from users 
+where email = $1
 and password = $2

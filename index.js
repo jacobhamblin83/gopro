@@ -22,7 +22,7 @@ app.use(session({
 //RESET DATA TABLES IN DATABASE
 app.set('db', db);
 db.schema((err, data) => {
-  if (err) console.log(err);
+  if (!err) return err;
   else console.log('All tables successfully reset');
 })
 
@@ -73,6 +73,7 @@ app.post('/api/addcart', function(req, res) {
   }
 });
 
+
 //GET CART FROM COOKIE
 app.get('/api/cart', (req, res) => {
   res.status(200).json(req.session.cart);
@@ -89,6 +90,19 @@ app.get('/api/products', (req, res) => {
     }
   })
 });
+
+app.post('/api/register', (req, res) => { 
+  db.add_user([req.body.firstname, req.body.lastname, req.body.address, req.body.city, req.body.state, req.body.zipcode, req.body.email, req.body.password], (err, response) => {
+    !err ? res.status(200).json(response) : res.status(500).json(err)
+  })
+})
+
+app.post('/api/check_user', function(req, res) {
+  db.check_user([req.body.email, req.body.password], function(err, info) {
+    !err ? res.status(200).json(info) : res.status(500).json(err)
+  })
+})
+
 
 app.listen(3000, () => {
   console.log('Listening on port 3000')

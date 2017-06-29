@@ -25,6 +25,13 @@ angular.module('app').service('service', function($http){
   this.addOrder = function(cart) {
     return $http.post('/api/addcart', cart)
   }
+
+  this.register = function(info) {
+    return $http.post('/api/register', info)
+  }
+  this.checkUser = function(obj) {
+    return $http.post('/api/check_user', obj)
+  }
   
 })//end of module 
 

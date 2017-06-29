@@ -17,9 +17,9 @@ angular.module('app',['ui.router'])
             controller: 'shopCtrl'
         })
         .state('login', {
-            url:'/login',
+            url:'/login/',
             templateUrl:'/views/login.html',
-            // controller: 'watchCtrl'
+            controller: 'loginCtrl'
         })
         .state('checkout', {
             url: '/checkout/',
@@ -40,7 +40,7 @@ angular.module('app',['ui.router'])
         .state('register', {
             url: '/register/',
             templateUrl: '/views/register.html',
-            controller: 'shopCtrl'
+            controller: 'registerCtrl'
         })
         .state('plus2', {
             url: '/plus2/',

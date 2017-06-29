@@ -28,10 +28,10 @@ insert into logins (username, password)
 values ('jacobhamblin83', 'JacobHamblin-83');
 
 -- -- this is the users name with shipping and email info
-create table users (id serial primary key, login_id integer, firstname text, lastname text, address text, city text, state text, zipcode int, email text);
+create table users (id serial primary key, login_id integer, firstname text, lastname text, address text, city text, state text, zipcode int, email text, password text);
 
-insert into users (login_id, firstname, lastname, address, city, state, zipcode, email)
-values (1, 'Jacob', 'Hamblin', '153 S 1000 E', 'Orem', 'UT', 84097, 'jacobhamblin83@gmail.com');
+insert into users (login_id, firstname, lastname, address, city, state, zipcode, email, password)
+values (1, 'Jacob', 'Hamblin', '153 S 1000 E', 'Orem', 'UT', 84097, 'jacobhamblin83@gmail.com', 'password');
 
 -- -- this will be orders table with one row per product
 create table ordernumber (id serial primary key, user_id int);

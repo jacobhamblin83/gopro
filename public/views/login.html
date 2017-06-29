@@ -1,0 +1,7 @@
+
+    <div class='loginbody registerbody'>
+        <input placeholder='Email' type="text" name="login_email" value="login_email" ng-model="login_email"/>
+        <input placeholder='Password' type="text" name="login_firstname" value="login_password" ng-model="login_password">
+        <button name="login" ng-click="checkUser({email: login_email, password: login_password})"></button>
+        {{currentUser}}
+    </div>
